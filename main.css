@@ -1,0 +1,339 @@
+/* CSS Reset */
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var, u, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed, 
+figure, figcaption, footer, header, hgroup, 
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+article, aside, details, figcaption, figure, 
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+body {
+	line-height: 1;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+
+/* General */
+
+body {
+	display:flex;
+	justify-content:center;
+	font-family:'Gotham Pro', sans-serif;
+}
+
+.container_main {
+	width:390px;
+	height:100%;
+	background-color:#F0F0F0;
+}
+
+.main_header,.logo_header,.special_header,.special__timer,.special__price,.slider__slides > div{
+	width:100%;
+	display:flex;
+	justify-content:center;
+	align-items:center;
+}
+
+.special__timer,.special__price{
+	position:absolute;
+	bottom:10px;
+	width:105px;
+	height:60px;
+	flex-direction:column;
+	font-size:1.4em;
+	font-weight:700;
+	color:#FFFFFF;
+	border-radius:8px;
+}
+
+.main_trustpilot,.main_carousel{
+	padding:20px 20px 0 20px;
+}
+
+.main_header img, .main_details img{
+	max-width:12px;
+	margin-bottom:3px;
+}
+
+.main_rate:not(:checked) label:hover,.main_rate:not(:checked) label:hover ~ label {
+	color: #deb217;
+}
+
+
+/* Header */
+
+.main_header{
+	height:33px;
+	background-color:#F19D2F;
+}
+
+.main_header h2{
+	text-transform:uppercase;
+	font-weight:600;
+	font-size:0.85em;
+	padding:0 6px;
+}
+
+.logo_header{
+	height:92px;
+	background-color:#FFD1AC;
+}
+
+.logo_header img{
+	max-width:50%;
+}
+
+.special_header{
+	position:relative;
+}
+
+.special_header img{
+	max-width:100%;
+}
+
+.special__timer{
+	left:10px;
+	background-color:#F19D2F;
+}
+
+.special__timer p{
+	font-size:0.5em;
+	letter-spacing:0.05em;
+	padding-bottom:8px;
+	text-transform:uppercase;
+}
+
+.special__price{
+	right:10px;
+	background-color:#37D997;
+}
+
+.special__price p:first-child{
+	font-size:0.8em;
+	padding-left:2px;
+	padding-bottom:5px;
+}
+
+.strikethrough{
+	 position:relative;
+	 display:inline-block;
+}
+
+.strikethrough::before{
+	content:'';
+	border-bottom:4px solid #E27500;
+	width:78px;
+	position:absolute;
+	right:1px;
+	bottom:4px;
+}
+
+
+/* Main content */
+
+.main_trustpilot{
+	height:20px;
+	display:flex;
+	justify-content:space-between;
+	align-items:flex-end;
+}
+
+.main_trustpilot p{
+	font-size:0.85em;
+}
+
+.main_trustpilot img{
+	margin-left:-5px;
+}
+
+.main_trustpilot p:last-child{
+	color:#37D997;
+	text-decoration:underline;
+}
+
+.main_carousel h2{
+	text-transform:uppercase;
+	font-size:1.35em;
+	font-weight:700;
+}
+
+.carousel__slider {
+	margin-top:20px;
+	width: 100%;
+	overflow: hidden;
+}
+
+.slider__slides {
+	display: flex;
+	overflow-x: auto;
+	scroll-snap-type: x mandatory;
+	scroll-behavior: smooth;
+	-webkit-overflow-scrolling: touch;
+	margin-bottom:20px;
+}
+
+.slider__slides::-webkit-scrollbar {
+	display:none;
+}
+
+.slider__slides div {
+	position: relative;
+	height:230px;
+	flex-shrink: 0;
+	margin-right: 50px;
+	background: #eee;
+	transform-origin: center center;
+	transform: scale(1);
+	transition: transform 0.5s;
+	scroll-snap-align: start;
+	font-size: 100px;
+}
+
+.slider__slides div img {
+	object-fit: cover;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 20px;
+}
+
+.carousel__slider a {
+	position: relative;
+	text-decoration:none;
+	margin-right:4px;
+}
+
+.carousel__slider a img{
+	max-width:80px;
+	border-radius:10px;
+}
+
+@media screen and (max-width:320px){
+	.carousel__slider a img{
+		max-width:62px;
+	}
+}
+
+.main_details{
+	font-size:1.05em;
+	margin-left:20px;
+	margin-top:12px;
+}
+
+.main_rate {
+	float:left;
+	display:flex;
+	flex-direction:row-reverse;
+	align-items:center;
+	height: 25px;
+	margin-top:5px;
+	padding-left:20px;
+}
+
+.main_rate p{
+	padding-left:10px;
+}
+
+.main_rate:not(:checked) input {
+	position:absolute;
+	top:-9999px;
+}
+
+.main_rate:not(:checked) label {
+	width:1em;
+	overflow:hidden;
+	white-space:nowrap;
+	cursor:pointer;
+	font-size:22px;
+	color:#ccc;
+}
+
+.main_rate:not(:checked) label:before {
+	content: '★ ';
+}
+
+.main_rate input:checked ~ label {
+	color: #ffc700;
+}
+
+.main_selects__description{
+	margin-top:20px;
+	display:flex;
+	justify-content:space-around;
+	text-align:center;
+	align-items:center;
+}
+
+.main_selects__description p{
+	width:50%;
+	margin-left:-8px;
+	font-size:12px;
+}
+
+.main_selects{
+	display:flex;
+	justify-content:space-between;
+	align-items:center;
+	gap:20px;
+	padding:0 20px;
+}
+
+.main_selects select{
+	width:45%;
+	margin-top:10px;
+	border:none;
+	font-size:22px;
+	text-transform:uppercase;
+	text-align:center;
+	padding:15px 0;
+	border-radius:16px;
+	font-weight:600;
+}
+
+.main_button{
+	display:flex;
+	justify-content:center;
+	align-items:center;
+	margin:20px;
+	padding:10px 40px;
+	background-color:#37D997;
+	border-radius:16px;
+	text-transform:uppercase;
+	text-decoration:none;
+	color:#FFFFFF;
+	font-size:30px;
+	font-weight:600;
+	letter-spacing:0.05em;
+}
